@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
       getStarted: {
         kk: 'Бірге бастайық!',
         ru: 'Давай начнём вместе!',
-        en: 'Let's Get Started!',
+        en: 'Let\'s Get Started!',
       },
     }
   };
