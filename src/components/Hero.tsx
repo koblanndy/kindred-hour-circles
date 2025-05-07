@@ -13,27 +13,17 @@ const Hero: React.FC = () => {
           ЖҮРЕКТЕН ЖҮРЕККЕ, ҰРПАҚТАН ҰРПАҚҚА
         </h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
-          <div className="rounded-lg overflow-hidden shadow-lg">
-            <img 
-              src="/lovable-uploads/15272052-14fa-45ba-a1cf-fc9b027af4d7.png" 
-              alt="Nature scene with blue sky and green hills" 
-              className="w-full h-auto object-cover"
-            />
-          </div>
-          <div className="rounded-lg overflow-hidden shadow-lg">
-            <img 
-              src="/lovable-uploads/15272052-14fa-45ba-a1cf-fc9b027af4d7.png" 
-              alt="Nature scene with blue sky and green hills" 
-              className="w-full h-auto object-cover"
-            />
-          </div>
-          <div className="rounded-lg overflow-hidden shadow-lg">
-            <img 
-              src="/lovable-uploads/15272052-14fa-45ba-a1cf-fc9b027af4d7.png" 
-              alt="Nature scene with blue sky and green hills" 
-              className="w-full h-auto object-cover"
-            />
+        <div className="flex justify-center space-x-6 mb-16">
+          <div className="w-full max-w-4xl flex flex-row space-x-4 justify-center">
+            <div className="bg-gray-200 rounded-lg h-48 w-1/3 flex items-center justify-center shadow-lg">
+              <span className="text-gray-500">Placeholder Image</span>
+            </div>
+            <div className="bg-gray-200 rounded-lg h-48 w-1/3 flex items-center justify-center shadow-lg">
+              <span className="text-gray-500">Placeholder Image</span>
+            </div>
+            <div className="bg-gray-200 rounded-lg h-48 w-1/3 flex items-center justify-center shadow-lg">
+              <span className="text-gray-500">Placeholder Image</span>
+            </div>
           </div>
         </div>
         
@@ -42,10 +32,10 @@ const Hero: React.FC = () => {
         </p>
         
         <div className="flex justify-center space-x-6">
-          <Button className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-lg px-12 py-6 rounded-full shadow-md">
+          <Button className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-lg px-12 py-6 rounded-full shadow-md w-48">
             {t('hero.signInButton')}
           </Button>
-          <Button className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-lg px-12 py-6 rounded-full shadow-md">
+          <Button className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-lg px-12 py-6 rounded-full shadow-md w-48">
             {t('hero.signUpButton')}
           </Button>
         </div>

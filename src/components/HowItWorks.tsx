@@ -31,29 +31,32 @@ const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <div id="how-it-works" className="bg-white section-padding">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('howItWorks.title')}</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t('howItWorks.subtitle')}
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, index) => (
-            <Card key={index} className="border border-gray-100 shadow-sm hover:shadow-md transition-all-smooth">
-              <CardHeader className="pb-2">
-                <div className="bg-blue-100 text-blue-600 w-12 h-12 flex items-center justify-center rounded-full mb-4">
-                  <step.icon size={24} />
-                </div>
-                <CardTitle className="text-xl font-semibold">{t(step.titleKey)}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">{t(step.descriptionKey)}</p>
-              </CardContent>
-            </Card>
-          ))}
+    <div className="relative">
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-blue-100 to-white"></div>
+      <div id="how-it-works" className="bg-white section-padding pt-32 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('howItWorks.title')}</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {t('howItWorks.subtitle')}
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {steps.map((step, index) => (
+              <Card key={index} className="border border-gray-100 shadow-sm hover:shadow-md transition-all-smooth">
+                <CardHeader className="pb-2">
+                  <div className="bg-blue-100 text-blue-600 w-12 h-12 flex items-center justify-center rounded-full mb-4">
+                    <step.icon size={24} />
+                  </div>
+                  <CardTitle className="text-xl font-semibold">{t(step.titleKey)}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">{t(step.descriptionKey)}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </div>
