@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Types for our translations
@@ -19,7 +20,7 @@ const translations = {
       en: 'Connecting Generations Through Meaningful Conversations',
     },
     subtitle: {
-      kk: 'Jüzdesu қарт адамдар мен жастарды апта сайын немесе екі апта сайын әңгімелесу үшін біріктіріп, ұрпақтар арасындағы алшақтықты жоятын маңызды қарым-қатынас жасайды.',
+      kk: '«Жүздесу» жобасы — ұрпақтарды жүрек пен сөз арқылы жақындастырып, қазақ тілінің тамырына жан бітіретін алтын көпір.',
       ru: 'Jüzdesu объединяет пожилых людей и молодежь для еженедельных или двухнедельных бесед, создавая значимые отношения, которые преодолевают разрыв между поколениями.',
       en: 'Jüzdesu brings together older adults and young people for weekly or bi-weekly conversations, creating meaningful relationships that bridge generational gaps.',
     },
@@ -120,6 +121,16 @@ const translations = {
       kk: 'Ұрпақаралық достықтың қуанышын бастан кешірген қатысушыларды тыңдаңыз.',
       ru: 'Услышьте от участников, которые испытали радость межпоколенческой дружбы.',
       en: 'Hear from participants who have experienced the joy of intergenerational friendship.',
+    },
+    comingSoon: {
+      kk: 'Пікірлер жақында',
+      ru: 'Отзывы скоро будут',
+      en: 'Reviews Coming Soon',
+    },
+    stayTuned: {
+      kk: 'Біздің қоғамдастық өсуде. Жақында нақты қолданушылардың пікірлерін көре аласыз.',
+      ru: 'Наше сообщество растет. Скоро здесь будут представлены реальные отзывы пользователей.',
+      en: 'Our community is growing. Real user testimonials will be featured here soon.',
     },
   },
   
