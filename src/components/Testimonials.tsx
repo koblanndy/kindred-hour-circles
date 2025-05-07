@@ -5,6 +5,7 @@ import {
   CardContent, 
   CardFooter 
 } from "@/components/ui/card";
+import { useTranslations } from '../context/TranslationContext';
 
 const testimonials = [
   {
@@ -28,13 +29,15 @@ const testimonials = [
 ];
 
 const Testimonials: React.FC = () => {
+  const { t } = useTranslations();
+
   return (
     <div id="testimonials" className="bg-white section-padding">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Stories of Connection</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('testimonials.title')}</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Hear from participants who have experienced the joy of intergenerational friendship.
+            {t('testimonials.subtitle')}
           </p>
         </div>
         

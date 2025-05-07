@@ -1,25 +1,27 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "../context/TranslationContext";
 
 const Hero: React.FC = () => {
+  const { t } = useTranslations();
+  
   return (
     <div className="bg-gradient-to-b from-blue-50 to-white section-padding">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Connecting Generations Through Meaningful Conversations
+            {t('hero.title')}
           </h1>
           <p className="text-lg md:text-xl text-gray-600">
-            Kindred Hours brings together older adults and young people for weekly or bi-weekly conversations, creating 
-            meaningful relationships that bridge generational gaps.
+            {t('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
             <Button className="bg-blue-600 hover:bg-blue-700 text-white text-lg py-6 px-8" size="lg">
-              I'm a Senior
+              {t('hero.seniorButton')}
             </Button>
             <Button className="bg-orange-400 hover:bg-orange-500 text-white text-lg py-6 px-8" size="lg">
-              I'm a Young Adult
+              {t('hero.youthButton')}
             </Button>
           </div>
         </div>

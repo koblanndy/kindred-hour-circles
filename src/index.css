@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -88,6 +89,10 @@
 
 .kindred-gradient {
   @apply bg-gradient-to-r from-blue-500 to-orange-400;
+}
+
+.juzdesu-gradient {
+  @apply bg-gradient-to-r from-yellow-200 to-blue-200;
 }
 
 .section-padding {
