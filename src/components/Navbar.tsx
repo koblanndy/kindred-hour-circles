@@ -8,9 +8,9 @@ const Navbar: React.FC = () => {
   const translations = {
     nav: {
       howItWorks: {
-        kk: 'Қалай жұмыс істейді',
-        ru: 'Как это работает',
-        en: 'How It Works',
+        kk: 'Қалай жұмыс істейді?',
+        ru: 'Как это работает?',
+        en: 'How It Works?',
       },
       testimonials: {
         kk: 'Пікірлер',
@@ -23,14 +23,14 @@ const Navbar: React.FC = () => {
         en: 'Join Now',
       },
       faq: {
-        kk: 'ЖҚС',
-        ru: 'ЧЗВ',
+        kk: 'Сұрақ - Жауап',
+        ru: 'Вопрос - Ответ',
         en: 'FAQ',
       },
       getStarted: {
-        kk: 'Бастау',
-        ru: 'Начать',
-        en: 'Get Started',
+        kk: 'Бірге бастайық!',
+        ru: 'Давай начнём вместе!',
+        en: 'Let's Get Started!',
       },
     }
   };
