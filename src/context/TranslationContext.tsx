@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Types for our translations
@@ -23,6 +22,16 @@ const translations = {
       kk: 'Jüzdesu қарт адамдар мен жастарды апта сайын немесе екі апта сайын әңгімелесу үшін біріктіріп, ұрпақтар арасындағы алшақтықты жоятын маңызды қарым-қатынас жасайды.',
       ru: 'Jüzdesu объединяет пожилых людей и молодежь для еженедельных или двухнедельных бесед, создавая значимые отношения, которые преодолевают разрыв между поколениями.',
       en: 'Jüzdesu brings together older adults and young people for weekly or bi-weekly conversations, creating meaningful relationships that bridge generational gaps.',
+    },
+    signInButton: {
+      kk: 'Кіру',
+      ru: 'Войти',
+      en: 'Sign In',
+    },
+    signUpButton: {
+      kk: 'Тіркелу',
+      ru: 'Регистрация',
+      en: 'Sign Up',
     },
     seniorButton: {
       kk: 'Мен қарт адаммын',

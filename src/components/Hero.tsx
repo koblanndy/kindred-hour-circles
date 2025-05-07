@@ -16,12 +16,12 @@ const Hero: React.FC = () => {
           <p className="text-lg md:text-xl text-gray-600">
             {t('hero.subtitle')}
           </p>
-          <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
+          <div className="flex justify-center flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
             <Button className="bg-blue-600 hover:bg-blue-700 text-white text-lg py-6 px-8" size="lg">
-              {t('hero.seniorButton')}
+              {t('hero.signInButton')}
             </Button>
             <Button className="bg-orange-400 hover:bg-orange-500 text-white text-lg py-6 px-8" size="lg">
-              {t('hero.youthButton')}
+              {t('hero.signUpButton')}
             </Button>
           </div>
         </div>
