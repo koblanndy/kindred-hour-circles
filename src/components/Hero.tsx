@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
   return (
     <div className="bg-gradient-to-b from-yellow-100 to-blue-100 section-padding min-h-[80vh] flex flex-col justify-center items-center">
       <div className="max-w-7xl w-full mx-auto text-center">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8 text-gray-800 whitespace-nowrap overflow-x-auto">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-8 text-gray-800 whitespace-nowrap">
           {language === 'kk' ? 'ЖҮРЕКТЕН ЖҮРЕККЕ, ҰРПАҚТАН ҰРПАҚҚА' : 
            language === 'ru' ? 'ОТ СЕРДЦА К СЕРДЦУ, ОТ ПОКОЛЕНИЯ К ПОКОЛЕНИЮ' : 
            'FROM HEART TO HEART, FROM GENERATION TO GENERATION'}
