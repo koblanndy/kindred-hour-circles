@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Types for our translations
@@ -26,9 +27,9 @@ const translations = {
       en: 'FROM HEART TO HEART, FROM GENERATION TO GENERATION',
     },
     subtitle: {
-      kk: '«Жүздесу» жобасы — ұрпақтарды жүрек пен сөз арқылы жақындастырып, қазақ тілінің тамырына жан бітіретін алтын көпір.',
-      ru: 'Jüzdesu объединяет пожилых людей и молодежь для еженедельных или двухнедельных бесед, создавая значимые отношения, которые преодолевают разрыв между поколениями.',
-      en: 'Jüzdesu brings together older adults and young people for weekly or bi-weekly conversations, creating meaningful relationships that bridge generational gaps.',
+      kk: '«Жүздесу» жобасы — ұрпақтарды жүрек пен сөз арқылы жақындастырып, қазақ тілінің тамырына жан бeретін алтын көпір.',
+      ru: 'Проект «Жүздесу» — это золотой мост, который сближает поколения через сердце и слово, вдохновляя новую жизнь в корни казахского языка.',
+      en: 'The "Jüzdesu" project is a golden bridge that brings generations closer through heart and conversation, breathing new life into the roots of the Kazakh language.',
     },
     registerButton: {
       kk: 'Тіркелу',
