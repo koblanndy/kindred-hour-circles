@@ -4,13 +4,15 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from "../context/TranslationContext";
 
 const Hero: React.FC = () => {
-  const { t } = useTranslations();
+  const { t, language } = useTranslations();
   
   return (
     <div className="bg-gradient-to-b from-yellow-100 to-blue-100 section-padding min-h-[80vh] flex flex-col justify-center items-center">
       <div className="max-w-7xl w-full mx-auto text-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8 text-gray-800">
-          ЖҮРЕКТЕН ЖҮРЕККЕ, ҰРПАҚТАН ҰРПАҚҚА
+          {language === 'kk' ? 'ЖҮРЕКТЕН ЖҮРЕККЕ, ҰРПАҚТАН ҰРПАҚҚА' : 
+           language === 'ru' ? 'ОТ СЕРДЦА К СЕРДЦУ, ОТ ПОКОЛЕНИЯ К ПОКОЛЕНИЮ' : 
+           'FROM HEART TO HEART, FROM GENERATION TO GENERATION'}
         </h1>
         
         <div className="flex justify-center space-x-6 mb-16">
@@ -28,15 +30,12 @@ const Hero: React.FC = () => {
         </div>
         
         <p className="text-lg md:text-xl lg:text-2xl text-gray-800 max-w-3xl mx-auto mb-12">
-          «Жүздесу» жобасы — ұрпақтарды жүрек пен сөз арқылы жақындастырып, қазақ тілінің тамырына жан бітіретін алтын көпір.
+          {t('hero.subtitle')}
         </p>
         
-        <div className="flex justify-center space-x-6">
+        <div className="flex justify-center">
           <Button className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-lg px-12 py-6 rounded-full shadow-md w-48">
-            {t('hero.signInButton')}
-          </Button>
-          <Button className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-lg px-12 py-6 rounded-full shadow-md w-48">
-            {t('hero.signUpButton')}
+            {t('hero.registerButton')}
           </Button>
         </div>
       </div>

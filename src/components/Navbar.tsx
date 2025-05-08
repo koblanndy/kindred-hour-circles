@@ -1,16 +1,16 @@
 
 import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
+import { useTranslations } from "../context/TranslationContext";
 
 const Navbar: React.FC = () => {
-  const [language, setLanguage] = useState<'kk' | 'ru' | 'en'>('kk'); // Default to Kazakh
+  const { language, setLanguage } = useTranslations();
   
   const translations = {
     nav: {
       howItWorks: {
-        kk: 'Қалай жұмыс істейді?',
-        ru: 'Как это работает?',
-        en: 'How It Works?',
+        kk: 'Қалай жұмыс істейді',
+        ru: 'Как это работает',
+        en: 'How It Works',
       },
       testimonials: {
         kk: 'Пікірлер',
@@ -23,15 +23,10 @@ const Navbar: React.FC = () => {
         en: 'Join Now',
       },
       faq: {
-        kk: 'Сұрақ - Жауап',
-        ru: 'Вопрос - Ответ',
+        kk: 'Сұрақ-Жауап',
+        ru: 'Вопрос-Ответ',
         en: 'FAQ',
-      },
-      getStarted: {
-        kk: 'Бірге бастайық!',
-        ru: 'Давай начнём вместе!',
-        en: 'Let\'s Get Started!',
-      },
+      }
     }
   };
 
@@ -59,7 +54,7 @@ const Navbar: React.FC = () => {
           </a>
         </div>
         
-        <div className="flex items-center space-x-5">
+        <div className="flex items-center">
           <div className="flex space-x-3">
             <button 
               onClick={() => setLanguage('kk')} 
@@ -80,9 +75,6 @@ const Navbar: React.FC = () => {
               EN
             </button>
           </div>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white text-base px-5 py-2 transition-all-smooth">
-            {translations.nav.getStarted[language]}
-          </Button>
         </div>
       </div>
     </nav>

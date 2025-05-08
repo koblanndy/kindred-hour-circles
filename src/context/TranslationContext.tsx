@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Types for our translations
@@ -12,37 +11,29 @@ type TranslationsContextType = {
 
 // Create the translations object
 const translations = {
+  // Common words
+  optional: {
+    kk: 'міндетті емес',
+    ru: 'необязательно',
+    en: 'optional'
+  },
+  
   // Hero section
   hero: {
     title: {
-      kk: 'Маңызды әңгімелер арқылы ұрпақтарды байланыстыру',
-      ru: 'Объединение поколений через значимые разговоры',
-      en: 'Connecting Generations Through Meaningful Conversations',
+      kk: 'ЖҮРЕКТЕН ЖҮРЕККЕ, ҰРПАҚТАН ҰРПАҚҚА',
+      ru: 'ОТ СЕРДЦА К СЕРДЦУ, ОТ ПОКОЛЕНИЯ К ПОКОЛЕНИЮ',
+      en: 'FROM HEART TO HEART, FROM GENERATION TO GENERATION',
     },
     subtitle: {
       kk: '«Жүздесу» жобасы — ұрпақтарды жүрек пен сөз арқылы жақындастырып, қазақ тілінің тамырына жан бітіретін алтын көпір.',
       ru: 'Jüzdesu объединяет пожилых людей и молодежь для еженедельных или двухнедельных бесед, создавая значимые отношения, которые преодолевают разрыв между поколениями.',
       en: 'Jüzdesu brings together older adults and young people for weekly or bi-weekly conversations, creating meaningful relationships that bridge generational gaps.',
     },
-    signInButton: {
-      kk: 'Кіру',
-      ru: 'Войти',
-      en: 'Sign In',
-    },
-    signUpButton: {
+    registerButton: {
       kk: 'Тіркелу',
       ru: 'Регистрация',
-      en: 'Sign Up',
-    },
-    seniorButton: {
-      kk: 'Мен қарт адаммын',
-      ru: 'Я старший',
-      en: 'I\'m a Senior',
-    },
-    youthButton: {
-      kk: 'Мен жас адаммын',
-      ru: 'Я молодой',
-      en: 'I\'m a Young Adult',
+      en: 'Register',
     },
   },
   
@@ -146,21 +137,31 @@ const translations = {
       ru: 'Начните свой путь к значимым межпоколенческим связям.',
       en: 'Start your journey towards meaningful intergenerational connections.',
     },
-    seniors: {
+    registration: {
       title: {
-        kk: 'Қарт адамдарды тіркеу',
-        ru: 'Регистрация пожилых людей',
-        en: 'Senior Registration',
+        kk: 'Тіркелу',
+        ru: 'Регистрация',
+        en: 'Registration',
       },
       description: {
-        kk: 'Жас ұрпақпен байланыс орнатып, даналығыңыз бен өмірлік тәжірибеңізбен бөлісіңіз.',
-        ru: 'Общайтесь с молодым поколением и делитесь своей мудростью и жизненным опытом.',
-        en: 'Connect with younger generations and share your wisdom and life experiences.',
+        kk: 'Жүздесу қоғамдастығына қосылып, ұрпақтар арасында байланыс орнатыңыз.',
+        ru: 'Присоединяйтесь к сообществу Jüzdesu и устанавливайте связи между поколениями.',
+        en: 'Join the Jüzdesu community and create connections across generations.',
       },
       fullName: {
         kk: 'Толық аты-жөні',
         ru: 'Полное имя',
         en: 'Full Name',
+      },
+      whatsapp: {
+        kk: 'WhatsApp нөмірі',
+        ru: 'Номер WhatsApp',
+        en: 'WhatsApp Number',
+      },
+      age: {
+        kk: 'Жас',
+        ru: 'Возраст',
+        en: 'Age',
       },
       email: {
         kk: 'Электрондық пошта',
@@ -168,36 +169,9 @@ const translations = {
         en: 'Email',
       },
       register: {
-        kk: 'Қарт адам ретінде тіркелу',
-        ru: 'Зарегистрироваться как старший',
-        en: 'Register as a Senior',
-      },
-    },
-    youth: {
-      title: {
-        kk: 'Жас ересектерді тіркеу',
-        ru: 'Регистрация молодых людей',
-        en: 'Young Adult Registration',
-      },
-      description: {
-        kk: 'Қауымдастығыңыздағы қарт адамдармен байланыс орнату арқылы көзқарас пен даналыққа ие болыңыз.',
-        ru: 'Получите перспективу и мудрость, общаясь с пожилыми людьми в вашем сообществе.',
-        en: 'Gain perspective and wisdom by connecting with seniors in your community.',
-      },
-      fullName: {
-        kk: 'Толық аты-жөні',
-        ru: 'Полное имя',
-        en: 'Full Name',
-      },
-      email: {
-        kk: 'Электрондық пошта',
-        ru: 'Электронная почта',
-        en: 'Email',
-      },
-      register: {
-        kk: 'Жас ересек ретінде тіркелу',
-        ru: 'Зарегистрироваться как молодой',
-        en: 'Register as a Young Adult',
+        kk: 'Тіркелу',
+        ru: 'Зарегистрироваться',
+        en: 'Register',
       },
     },
   },
