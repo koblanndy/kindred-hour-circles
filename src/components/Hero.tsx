@@ -19,8 +19,8 @@ const Hero: React.FC = () => {
            'HEART TO HEART, GENERATION TO GENERATION'}
         </h1>
         
-        <div className="flex justify-center space-x-6 mb-16">
-          <div className="w-full max-w-4xl flex flex-row space-x-4 justify-center">
+        <div className="flex justify-center mb-16 w-full">
+          <div className="w-full flex flex-row space-x-4 justify-center">
             <div className="bg-gray-200 rounded-lg h-48 w-1/3 flex items-center justify-center shadow-lg">
               <span className="text-gray-500">Placeholder Image</span>
             </div>
