@@ -28,8 +28,8 @@ const translations = {
     },
     subtitle: {
       kk: '«Жүздесу» жобасы — ұрпақтарды жүрек пен сөз арқылы жақындастырып, қазақ тілінің тамырына жан бeретін алтын көпір.',
-      ru: 'Проект «Жүздесу» — это золотой мост, который сближает поколения через сердце и слово, вдохновляя новую жизнь в корни казахского языка.',
-      en: 'The "Jüzdesu" project is a golden bridge that brings generations closer through heart and conversation, breathing new life into the roots of the Kazakh language.',
+      ru: 'Проект «Жүздесу» — это золотой мост, который сближает поколения через сердцa и разговоры, вдохновляя новую жизнь в корни казахского языка.',
+      en: 'The "Jüzdesu" project is a golden bridge that brings generations closer through conversations, breathing new life into the roots of the Kazakh language.',
     },
     registerButton: {
       kk: 'Тіркелу',
