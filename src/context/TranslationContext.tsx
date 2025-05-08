@@ -60,7 +60,7 @@ const translations = {
         description: {
           kk: 'Қарапайым тіркеу нысанын толтырып, қызығушылықтарыңыз бен сөйлесу ыңғайлылығыңыз туралы айтып беріңіз.',
           ru: 'Заполните простую форму, чтобы рассказать о своих интересах и когда вам удобно общаться.',
-          en: 'Fill out a simple form to share your interests and when you're comfortable having conversations.',
+          en: "Fill out a simple form to share your interests and when you're comfortable having conversations.",
         },
       },
       matched: {
@@ -222,4 +222,3 @@ export const useTranslations = (): TranslationsContextType => {
   }
   return context;
 };
-
