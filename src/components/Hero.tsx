@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
         <h1 className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-8 text-gray-800 whitespace-nowrap">
           {language === 'kk' ? 'ЖҮРЕКТЕН ЖҮРЕККЕ, ҰРПАҚТАН ҰРПАҚҚА' : 
            language === 'ru' ? 'ОТ СЕРДЦА К СЕРДЦУ, ОТ ПОКОЛЕНИЯ К ПОКОЛЕНИЮ' : 
-           'FROM HEART TO HEART, FROM GENERATION TO GENERATION'}
+           'HEART TO HEART, GENERATION TO GENERATION'}
         </h1>
         
         <div className="flex justify-center space-x-6 mb-16">
