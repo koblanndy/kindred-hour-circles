@@ -58,21 +58,21 @@ const translations = {
           en: 'Sign Up',
         },
         description: {
-          kk: 'Біздің оңай тіркеу нысанын толтырып, қызығушылықтарыңыз бен қол жетімділігіңіз туралы айтыңыз.',
-          ru: 'Заполните нашу простую регистрационную форму и расскажите о своих интересах и доступности.',
-          en: 'Fill out our easy registration form and tell us about your interests and availability.',
+          kk: 'Қарапайым тіркеу нысанын толтырып, қызығушылықтарыңыз бен сөйлесу ыңғайлылығыңыз туралы айтып беріңіз.',
+          ru: 'Заполните простую форму, чтобы рассказать о своих интересах и когда вам удобно общаться.',
+          en: 'Fill out a simple form to share your interests and when you're comfortable having conversations.',
         },
       },
       matched: {
         title: {
           kk: 'Сәйкестендіру',
           ru: 'Подбор',
-          en: 'Get Matched',
+          en: 'Matching',
         },
         description: {
-          kk: 'Біздің жүйе қарт адамдар мен жас ересектерді ортақ қызығушылықтары мен қол жетімділігі негізінде мұқият сәйкестендіреді.',
-          ru: 'Наша система тщательно сопоставляет пожилых людей и молодых людей на основе общих интересов и доступности.',
-          en: 'Our system carefully matches seniors and young adults based on common interests and availability.',
+          kk: 'Біз адамдарды ортақ қызығушылықтары мен қарым-қатынас стиліне қарай сәйкестендіреміз.',
+          ru: 'Мы подбираем участников на основе общих интересов и стиля общения.',
+          en: 'We connect people based on shared interests and communication preferences.',
         },
       },
       connect: {
@@ -82,21 +82,21 @@ const translations = {
           en: 'Connect',
         },
         description: {
-          kk: 'Біздің қауіпсіз платформа арқылы алғашқы виртуалды кездесуіңізді жоспарлап, әңгімеңізді бастаңыз.',
-          ru: 'Запланируйте первую виртуальную встречу через нашу безопасную платформу и начните разговор.',
-          en: 'Schedule your first virtual meeting through our secure platform and start your conversation.',
+          kk: 'Алғашқы онлайн танысуыңызды жоспарлап, жеңіл әрі еркін әңгімеден бастаңыз.',
+          ru: 'Назначьте первую онлайн-встречу и начните с лёгкой и дружеской беседы.',
+          en: 'Plan your first online meet-up and start with a light, friendly conversation.',
         },
       },
       meetings: {
         title: {
-          kk: 'Тұрақты кездесулер',
+          kk: 'Тұрақты кездесу',
           ru: 'Регулярные встречи',
-          en: 'Regular Meetings',
+          en: 'Ongoing Meetups',
         },
         description: {
-          kk: 'Маңызды әңгіме мен байланыс үшін апта сайын немесе екі апта сайын бір сағатқа кездесіңіз.',
-          ru: 'Встречайтесь еженедельно или раз в две недели в течение часа для содержательного разговора и общения.',
-          en: 'Meet weekly or bi-weekly for an hour of meaningful conversation and connection.',
+          kk: 'Қалауыңызға қарай аптасына немесе екі аптада бір рет бір сағатқа кездесіп тұрыңыз.',
+          ru: 'Встречайтесь на час каждую или через неделю — как вам удобно.',
+          en: 'Meet for an hour weekly or biweekly—whatever works best for you.',
         },
       },
     },
@@ -222,3 +222,4 @@ export const useTranslations = (): TranslationsContextType => {
   }
   return context;
 };
+
