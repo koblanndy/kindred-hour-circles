@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
     <nav className="bg-white shadow-md py-6 px-6 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <span className="text-2xl font-bold bg-clip-text text-transparent juzdesu-gradient">
+          <span className="text-2xl font-bold bg-clip-text text-transparent juzdesu-gradient border-2 border-black px-2 py-1 rounded-md">
             Jüzdesu
           </span>
         </div>

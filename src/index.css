@@ -92,7 +92,7 @@
 }
 
 .juzdesu-gradient {
-  @apply bg-gradient-to-r from-yellow-200 to-blue-200;
+  @apply bg-gradient-to-r from-blue-600 to-yellow-400;
 }
 
 .section-padding {
@@ -101,4 +101,8 @@
 
 .transition-all-smooth {
   @apply transition-all duration-300 ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
 }

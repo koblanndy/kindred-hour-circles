@@ -6,6 +6,10 @@ import { useTranslations } from "../context/TranslationContext";
 const Hero: React.FC = () => {
   const { t, language } = useTranslations();
   
+  const scrollToRegistration = () => {
+    document.getElementById('join')?.scrollIntoView({ behavior: 'smooth' });
+  };
+  
   return (
     <div className="bg-gradient-to-b from-yellow-100 to-blue-100 section-padding min-h-[80vh] flex flex-col justify-center items-center">
       <div className="max-w-7xl w-full mx-auto text-center">
@@ -34,7 +38,10 @@ const Hero: React.FC = () => {
         </p>
         
         <div className="flex justify-center">
-          <Button className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-lg px-12 py-6 rounded-full shadow-md w-48">
+          <Button 
+            className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-lg px-12 py-6 rounded-full shadow-md w-48"
+            onClick={scrollToRegistration}
+          >
             {t('hero.registerButton')}
           </Button>
         </div>
