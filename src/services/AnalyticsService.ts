@@ -1,5 +1,6 @@
 
 // Analytics service to track website visitors and user interactions
+import { supabase } from "@/integrations/supabase/client";
 
 // Interface for page view data
 interface PageViewData {
@@ -22,10 +23,12 @@ class AnalyticsService {
   private interactions: InteractionData[] = [];
   private sessionStartTime: number;
   private userId: string;
+  private sessionId: string;
 
   private constructor() {
     this.sessionStartTime = Date.now();
     this.userId = this.generateUserId();
+    this.sessionId = this.generateSessionId();
     console.log('Analytics service initialized');
     this.trackPageLoad();
   }
@@ -43,8 +46,13 @@ class AnalyticsService {
     return 'user_' + Math.random().toString(36).substring(2, 15);
   }
 
+  // Generate a session identifier
+  private generateSessionId(): string {
+    return 'session_' + Math.random().toString(36).substring(2, 15);
+  }
+
   // Track page load
-  public trackPageLoad(): void {
+  public async trackPageLoad(): Promise<void> {
     const pageView: PageViewData = {
       page: window.location.pathname,
       referrer: document.referrer,
@@ -54,12 +62,24 @@ class AnalyticsService {
     this.pageViews.push(pageView);
     console.log('Page view tracked:', pageView);
     
-    // In a real implementation, you would send this data to your backend
-    // this.sendToBackend('/api/analytics/pageview', pageView);
+    // Save to Supabase
+    try {
+      const { error } = await supabase.from('analytics').insert([{
+        page: pageView.page,
+        referrer: pageView.referrer,
+        session_id: this.sessionId
+      }]);
+
+      if (error) {
+        console.error('Error saving analytics data:', error);
+      }
+    } catch (err) {
+      console.error('Error in analytics tracking:', err);
+    }
   }
 
   // Track user interaction
-  public trackInteraction(action: string, element: string): void {
+  public async trackInteraction(action: string, element: string): Promise<void> {
     const interaction: InteractionData = {
       action,
       element,
@@ -70,8 +90,20 @@ class AnalyticsService {
     this.interactions.push(interaction);
     console.log('Interaction tracked:', interaction);
     
-    // In a real implementation, you would send this data to your backend
-    // this.sendToBackend('/api/analytics/interaction', interaction);
+    // Save to Supabase
+    try {
+      const { error } = await supabase.from('analytics').insert([{
+        page: interaction.page,
+        section: element,
+        session_id: this.sessionId
+      }]);
+
+      if (error) {
+        console.error('Error saving interaction data:', error);
+      }
+    } catch (err) {
+      console.error('Error in interaction tracking:', err);
+    }
   }
 
   // Track section views
@@ -83,23 +115,12 @@ class AnalyticsService {
   public getAnalyticsData() {
     return {
       userId: this.userId,
+      sessionId: this.sessionId,
       sessionDuration: Date.now() - this.sessionStartTime,
       pageViews: this.pageViews,
       interactions: this.interactions
     };
   }
-
-  // In a real implementation, this would send data to your backend
-  // private sendToBackend(endpoint: string, data: any): void {
-  //   fetch(endpoint, {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     body: JSON.stringify({
-  //       userId: this.userId,
-  //       ...data
-  //     })
-  //   }).catch(error => console.error('Analytics error:', error));
-  // }
 }
 
 export default AnalyticsService;

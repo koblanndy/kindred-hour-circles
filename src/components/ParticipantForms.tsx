@@ -12,26 +12,66 @@ import {
 } from "@/components/ui/card";
 import { useToast } from '@/hooks/use-toast';
 import { useTranslations } from '../context/TranslationContext';
+import { supabase } from '@/integrations/supabase/client';
 
 const ParticipantForms: React.FC = () => {
   const [fullName, setFullName] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [email, setEmail] = useState('');
   const [age, setAge] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const { toast } = useToast();
   const { t } = useTranslations();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Registration Received!",
-      description: "We'll contact you soon to continue the matching process.",
-    });
-    setFullName('');
-    setWhatsapp('');
-    setEmail('');
-    setAge('');
+    setIsSubmitting(true);
+
+    try {
+      // Save participant data to Supabase
+      const { error } = await supabase
+        .from('participants')
+        .insert([
+          { 
+            full_name: fullName,
+            whatsapp,
+            email: email || null, // Handle empty email as null
+            age: parseInt(age),
+          }
+        ]);
+
+      if (error) {
+        console.error('Error submitting form:', error);
+        toast({
+          title: "Error",
+          description: "There was a problem submitting your registration. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      toast({
+        title: "Registration Received!",
+        description: "We'll contact you soon to continue the matching process.",
+      });
+      
+      // Reset form after successful submission
+      setFullName('');
+      setWhatsapp('');
+      setEmail('');
+      setAge('');
+      
+    } catch (err) {
+      console.error('Error in form submission:', err);
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -97,8 +137,12 @@ const ParticipantForms: React.FC = () => {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
-                  {t('join.registration.register')}
+                <Button 
+                  type="submit" 
+                  className="w-full bg-blue-600 hover:bg-blue-700"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? t('loading') : t('join.registration.register')}
                 </Button>
               </form>
             </CardContent>
