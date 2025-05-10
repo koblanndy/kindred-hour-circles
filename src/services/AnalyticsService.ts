@@ -24,13 +24,19 @@ class AnalyticsService {
   private sessionStartTime: number;
   private userId: string;
   private sessionId: string;
+  private initialized: boolean = false;
 
   private constructor() {
     this.sessionStartTime = Date.now();
     this.userId = this.generateUserId();
     this.sessionId = this.generateSessionId();
+    this.initialized = true;
     console.log('Analytics service initialized');
-    this.trackPageLoad();
+    
+    // Only track page load if we're in a browser environment
+    if (typeof window !== 'undefined') {
+      this.trackPageLoad();
+    }
   }
 
   // Singleton pattern
@@ -53,6 +59,10 @@ class AnalyticsService {
 
   // Track page load
   public async trackPageLoad(): Promise<void> {
+    if (!this.initialized || typeof window === 'undefined') {
+      return;
+    }
+    
     const pageView: PageViewData = {
       page: window.location.pathname,
       referrer: document.referrer,
@@ -80,6 +90,10 @@ class AnalyticsService {
 
   // Track user interaction
   public async trackInteraction(action: string, element: string): Promise<void> {
+    if (!this.initialized || typeof window === 'undefined') {
+      return;
+    }
+    
     const interaction: InteractionData = {
       action,
       element,
