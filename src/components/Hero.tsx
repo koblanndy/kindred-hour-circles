@@ -17,8 +17,10 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl w-full mx-auto text-center">
         <h1 className="text-base md:text-xl lg:text-3xl font-bold leading-tight mb-4 md:mb-8 text-gray-800 px-4">
           {language === 'kk' ? (
-            <span className="block">ЖҮРЕКТЕН ЖҮРЕККЕ,</span>
-            <span className="block">ҰРПАҚТАН ҰРПАҚҚА</span>
+            <>
+              <span className="block">ЖҮРЕКТЕН ЖҮРЕККЕ,</span>
+              <span className="block">ҰРПАҚТАН ҰРПАҚҚА</span>
+            </>
           ) : language === 'ru' ? (
             <>
               <span className="block">ОТ СЕРДЦА К СЕРДЦУ,</span>
