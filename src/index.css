@@ -96,7 +96,7 @@
 }
 
 .section-padding {
-  @apply py-12 px-4 md:py-24 md:px-8;
+  @apply py-8 px-4 md:py-16 lg:py-24 md:px-8;
 }
 
 .transition-all-smooth {
@@ -105,4 +105,29 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile optimizations */
+input, 
+select, 
+textarea {
+  @apply text-base;
+  font-size: 16px; /* Prevents zoom on iOS */
+}
+
+button {
+  @apply touch-manipulation;
+}
+
+/* Fix for sticky hover effects on mobile */
+@media (hover: hover) {
+  .hover-effect:hover {
+    @apply opacity-80;
+  }
+}
+
+/* Improve touch target sizes */
+.touch-target {
+  @apply min-h-[44px] min-w-[44px];
 }

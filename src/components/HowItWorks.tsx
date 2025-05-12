@@ -32,22 +32,22 @@ const HowItWorks: React.FC = () => {
 
   return (
     <div id="how-it-works" className="bg-white section-padding">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('howItWorks.title')}</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">{t('howItWorks.title')}</h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             {t('howItWorks.subtitle')}
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => (
             <Card key={index} className="border border-gray-100 shadow-sm hover:shadow-md transition-all-smooth">
               <CardHeader className="pb-2">
                 <div className="bg-blue-100 text-blue-600 w-12 h-12 flex items-center justify-center rounded-full mb-4">
                   <step.icon size={24} />
                 </div>
-                <CardTitle className="text-xl font-semibold">{t(step.titleKey)}</CardTitle>
+                <CardTitle className="text-lg md:text-xl font-semibold">{t(step.titleKey)}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">{t(step.descriptionKey)}</p>

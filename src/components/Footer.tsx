@@ -4,11 +4,11 @@ import { Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 text-gray-200 py-12">
+    <footer className="bg-gray-800 text-gray-200 py-8 md:py-12">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="col-span-1">
-            <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent kindred-gradient">
+            <h3 className="text-xl md:text-2xl font-bold mb-4 bg-clip-text text-transparent kindred-gradient">
               Jüzdesu
             </h3>
             <p className="mb-4">Building bridges across generations through meaningful conversations.</p>
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-700 text-center">
+        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-gray-700 text-center">
           <p>&copy; 2025 Jüzdesu. All rights reserved.</p>
         </div>
       </div>

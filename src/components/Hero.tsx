@@ -2,44 +2,55 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "../context/TranslationContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Hero: React.FC = () => {
   const { t, language } = useTranslations();
+  const isMobile = useIsMobile();
   
   const scrollToRegistration = () => {
     document.getElementById('join')?.scrollIntoView({ behavior: 'smooth' });
   };
   
   return (
-    <div className="bg-gradient-to-b from-yellow-100 to-blue-100 section-padding min-h-[80vh] flex flex-col justify-center items-center">
+    <div className="bg-gradient-to-b from-yellow-100 to-blue-100 section-padding min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center items-center">
       <div className="max-w-7xl w-full mx-auto text-center">
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-8 text-gray-800 whitespace-nowrap">
+        <h1 className="text-lg md:text-xl lg:text-3xl font-bold leading-tight mb-8 text-gray-800 px-4">
           {language === 'kk' ? 'ЖҮРЕКТЕН ЖҮРЕККЕ, ҰРПАҚТАН ҰРПАҚҚА' : 
            language === 'ru' ? 'ОТ СЕРДЦА К СЕРДЦУ, ОТ ПОКОЛЕНИЯ К ПОКОЛЕНИЮ' : 
            'HEART TO HEART, GENERATION TO GENERATION'}
         </h1>
         
-        <div className="flex justify-center mb-16 w-full">
-          <div className="w-full flex flex-row space-x-4 justify-center">
-            <div className="bg-gray-200 rounded-lg h-48 w-1/3 flex items-center justify-center shadow-lg">
+        {/* Image grid with responsive layout */}
+        <div className="flex justify-center mb-16 w-full px-4">
+          {isMobile ? (
+            // Single image for mobile
+            <div className="bg-gray-200 rounded-lg h-48 w-full flex items-center justify-center shadow-lg">
               <span className="text-gray-500">Placeholder Image</span>
             </div>
-            <div className="bg-gray-200 rounded-lg h-48 w-1/3 flex items-center justify-center shadow-lg">
-              <span className="text-gray-500">Placeholder Image</span>
+          ) : (
+            // Multiple images for larger screens
+            <div className="w-full flex flex-row space-x-4 justify-center">
+              <div className="bg-gray-200 rounded-lg h-48 w-1/3 flex items-center justify-center shadow-lg">
+                <span className="text-gray-500">Placeholder Image</span>
+              </div>
+              <div className="bg-gray-200 rounded-lg h-48 w-1/3 flex items-center justify-center shadow-lg">
+                <span className="text-gray-500">Placeholder Image</span>
+              </div>
+              <div className="bg-gray-200 rounded-lg h-48 w-1/3 flex items-center justify-center shadow-lg">
+                <span className="text-gray-500">Placeholder Image</span>
+              </div>
             </div>
-            <div className="bg-gray-200 rounded-lg h-48 w-1/3 flex items-center justify-center shadow-lg">
-              <span className="text-gray-500">Placeholder Image</span>
-            </div>
-          </div>
+          )}
         </div>
         
-        <p className="text-lg md:text-xl lg:text-2xl text-gray-800 max-w-3xl mx-auto mb-12">
+        <p className="text-base md:text-lg lg:text-2xl text-gray-800 max-w-3xl mx-auto mb-12 px-4">
           {t('hero.subtitle')}
         </p>
         
         <div className="flex justify-center">
           <Button 
-            className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-lg px-12 py-6 rounded-full shadow-md w-48"
+            className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-base md:text-lg px-8 py-4 md:px-12 md:py-6 rounded-full shadow-md w-auto md:w-48"
             onClick={scrollToRegistration}
           >
             {t('hero.registerButton')}

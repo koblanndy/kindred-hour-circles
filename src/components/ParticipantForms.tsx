@@ -78,10 +78,10 @@ const ParticipantForms: React.FC = () => {
     <div className="relative">
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-gray-50 to-blue-50"></div>
       <div id="join" className="bg-blue-50 section-padding pt-32 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('join.title')}</h2>
-            <p className="text-xl text-gray-600">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">{t('join.title')}</h2>
+            <p className="text-base md:text-xl text-gray-600">
               {t('join.subtitle')}
             </p>
           </div>
@@ -103,6 +103,7 @@ const ParticipantForms: React.FC = () => {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     required
+                    className="w-full"
                   />
                 </div>
                 <div className="space-y-2">
@@ -114,6 +115,7 @@ const ParticipantForms: React.FC = () => {
                     value={whatsapp}
                     onChange={(e) => setWhatsapp(e.target.value)}
                     required
+                    className="w-full"
                   />
                 </div>
                 <div className="space-y-2">
@@ -125,6 +127,9 @@ const ParticipantForms: React.FC = () => {
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
                     required
+                    className="w-full"
+                    min="1"
+                    max="120"
                   />
                 </div>
                 <div className="space-y-2">
@@ -135,11 +140,12 @@ const ParticipantForms: React.FC = () => {
                     placeholder={t('join.registration.email')}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    className="w-full"
                   />
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full bg-blue-600 hover:bg-blue-700"
+                  className="w-full bg-blue-600 hover:bg-blue-700 py-6 text-lg"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? t('loading') : t('join.registration.register')}
