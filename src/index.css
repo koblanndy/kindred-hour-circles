@@ -84,6 +84,8 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
@@ -96,7 +98,7 @@
 }
 
 .section-padding {
-  @apply py-8 px-4 md:py-16 lg:py-24 md:px-8;
+  @apply py-6 px-3 md:py-16 lg:py-24 md:px-8;
 }
 
 .transition-all-smooth {
@@ -130,4 +132,20 @@ button {
 /* Improve touch target sizes */
 .touch-target {
   @apply min-h-[44px] min-w-[44px];
+}
+
+/* Enhanced mobile text readability */
+@media (max-width: 640px) {
+  h1, h2, h3 {
+    @apply tracking-tight;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+/* Make gradients more visible */
+.bg-gradient-to-b {
+  @apply bg-opacity-100;
 }

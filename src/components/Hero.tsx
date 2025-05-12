@@ -15,17 +15,17 @@ const Hero: React.FC = () => {
   return (
     <div className="bg-gradient-to-b from-yellow-100 to-blue-100 section-padding min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center items-center">
       <div className="max-w-7xl w-full mx-auto text-center">
-        <h1 className="text-lg md:text-xl lg:text-3xl font-bold leading-tight mb-8 text-gray-800 px-4">
+        <h1 className="text-base md:text-xl lg:text-3xl font-bold leading-tight mb-4 md:mb-8 text-gray-800 px-4">
           {language === 'kk' ? 'ЖҮРЕКТЕН ЖҮРЕККЕ, ҰРПАҚТАН ҰРПАҚҚА' : 
            language === 'ru' ? 'ОТ СЕРДЦА К СЕРДЦУ, ОТ ПОКОЛЕНИЯ К ПОКОЛЕНИЮ' : 
            'HEART TO HEART, GENERATION TO GENERATION'}
         </h1>
         
         {/* Image grid with responsive layout */}
-        <div className="flex justify-center mb-16 w-full px-4">
+        <div className="flex justify-center mb-8 md:mb-16 w-full px-4">
           {isMobile ? (
             // Single image for mobile
-            <div className="bg-gray-200 rounded-lg h-48 w-full flex items-center justify-center shadow-lg">
+            <div className="bg-gray-200 rounded-lg h-40 w-full flex items-center justify-center shadow-lg">
               <span className="text-gray-500">Placeholder Image</span>
             </div>
           ) : (
@@ -44,13 +44,13 @@ const Hero: React.FC = () => {
           )}
         </div>
         
-        <p className="text-base md:text-lg lg:text-2xl text-gray-800 max-w-3xl mx-auto mb-12 px-4">
+        <p className="text-sm md:text-lg lg:text-2xl text-gray-800 max-w-3xl mx-auto mb-8 md:mb-12 px-4">
           {t('hero.subtitle')}
         </p>
         
         <div className="flex justify-center">
           <Button 
-            className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-base md:text-lg px-8 py-4 md:px-12 md:py-6 rounded-full shadow-md w-auto md:w-48"
+            className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-base md:text-lg px-6 py-3 md:px-12 md:py-6 rounded-full shadow-md w-auto md:w-48"
             onClick={scrollToRegistration}
           >
             {t('hero.registerButton')}

@@ -9,13 +9,13 @@ interface PageDividerProps {
 
 const PageDivider: React.FC<PageDividerProps> = ({ type }) => {
   const gradientClasses = {
-    'blue-to-white': 'from-blue-100 to-white',
-    'white-to-gray': 'from-white to-gray-50',
-    'gray-to-white': 'from-gray-50 to-white',
+    'blue-to-white': 'from-blue-200 to-white',
+    'white-to-gray': 'from-white to-gray-100',
+    'gray-to-white': 'from-gray-100 to-white',
   };
 
   return (
-    <div className={`w-full h-32 bg-gradient-to-b ${gradientClasses[type]}`}></div>
+    <div className={`w-full h-24 md:h-32 bg-gradient-to-b ${gradientClasses[type]}`}></div>
   );
 };
 
