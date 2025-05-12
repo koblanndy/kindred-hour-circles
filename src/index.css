@@ -149,3 +149,19 @@ button {
 .bg-gradient-to-b {
   @apply bg-opacity-100;
 }
+
+/* Add more intermediate steps to gradients to make them smoother */
+.from-yellow-100.via-yellow-50.to-blue-100 {
+  background-image: linear-gradient(to bottom, 
+    #fef9c3, /* yellow-100 */ 
+    #fefce8, /* yellow-50 */ 
+    #dbeafe  /* blue-100 */
+  );
+}
+
+/* Additional gradient helpers for smoother transitions */
+.smooth-gradient {
+  background-size: 100% 100%;
+  background-position: 0 0;
+}
+

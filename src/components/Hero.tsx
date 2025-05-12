@@ -13,20 +13,39 @@ const Hero: React.FC = () => {
   };
   
   return (
-    <div className="bg-gradient-to-b from-yellow-100 to-blue-100 section-padding min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center items-center">
+    <div className="bg-gradient-to-b from-yellow-100 via-yellow-50 to-blue-100 section-padding min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center items-center">
       <div className="max-w-7xl w-full mx-auto text-center">
         <h1 className="text-base md:text-xl lg:text-3xl font-bold leading-tight mb-4 md:mb-8 text-gray-800 px-4">
-          {language === 'kk' ? 'ЖҮРЕКТЕН ЖҮРЕККЕ, ҰРПАҚТАН ҰРПАҚҚА' : 
-           language === 'ru' ? 'ОТ СЕРДЦА К СЕРДЦУ, ОТ ПОКОЛЕНИЯ К ПОКОЛЕНИЮ' : 
-           'HEART TO HEART, GENERATION TO GENERATION'}
+          {language === 'kk' ? (
+            <span className="block">ЖҮРЕКТЕН ЖҮРЕККЕ,</span>
+            <span className="block">ҰРПАҚТАН ҰРПАҚҚА</span>
+          ) : language === 'ru' ? (
+            <>
+              <span className="block">ОТ СЕРДЦА К СЕРДЦУ,</span>
+              <span className="block">ОТ ПОКОЛЕНИЯ К ПОКОЛЕНИЮ</span>
+            </>
+          ) : (
+            <>
+              <span className="block">HEART TO HEART,</span>
+              <span className="block">GENERATION TO GENERATION</span>
+            </>
+          )}
         </h1>
         
         {/* Image grid with responsive layout */}
-        <div className="flex justify-center mb-8 md:mb-16 w-full px-4">
+        <div className="flex flex-col mb-8 md:mb-16 w-full px-4">
           {isMobile ? (
-            // Single image for mobile
-            <div className="bg-gray-200 rounded-lg h-40 w-full flex items-center justify-center shadow-lg">
-              <span className="text-gray-500">Placeholder Image</span>
+            // Stacked images for mobile
+            <div className="flex flex-col space-y-4 items-center">
+              <div className="bg-gray-200 rounded-lg h-40 w-full max-w-sm flex items-center justify-center shadow-lg">
+                <span className="text-gray-500">Placeholder Image</span>
+              </div>
+              <div className="bg-gray-200 rounded-lg h-40 w-full max-w-sm flex items-center justify-center shadow-lg">
+                <span className="text-gray-500">Placeholder Image</span>
+              </div>
+              <div className="bg-gray-200 rounded-lg h-40 w-full max-w-sm flex items-center justify-center shadow-lg">
+                <span className="text-gray-500">Placeholder Image</span>
+              </div>
             </div>
           ) : (
             // Multiple images for larger screens
