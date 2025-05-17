@@ -89,6 +89,27 @@
   }
 }
 
+/* 3D Interactive Button Styles */
+.interactive-button {
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  will-change: transform;
+}
+
+.interactive-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.15), 0 5px 5px rgba(0, 0, 0, 0.12);
+  filter: brightness(1.05);
+}
+
+.interactive-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Keep existing kindred-gradient styles */
 .kindred-gradient {
   @apply bg-gradient-to-r from-blue-500 to-orange-400;
 }
@@ -164,4 +185,3 @@ button {
   background-size: 100% 100%;
   background-position: 0 0;
 }
-

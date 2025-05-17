@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
         
         <div className="flex justify-center">
           <Button 
-            className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-base md:text-lg px-6 py-3 md:px-12 md:py-6 rounded-full shadow-md w-auto md:w-48"
+            className="interactive-button bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-base md:text-lg px-6 py-3 md:px-12 md:py-6 rounded-full shadow-md w-auto md:w-48"
             onClick={scrollToRegistration}
           >
             {t('hero.registerButton')}
