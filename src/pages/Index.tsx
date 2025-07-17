@@ -2,9 +2,11 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import About from '../components/About';
 import HowItWorks from '../components/HowItWorks';
-import ParticipantForms from '../components/ParticipantForms';
-import Testimonials from '../components/Testimonials';
+import Features from '../components/Features';
+import ComingSoon from '../components/ComingSoon';
+import WaitlistForm from '../components/WaitlistForm';
 import Footer from '../components/Footer';
 import PageDivider from '../components/PageDivider';
 import AnalyticsService from '../services/AnalyticsService';
@@ -16,7 +18,7 @@ const Index: React.FC = () => {
       const analyticsService = AnalyticsService.getInstance();
       
       // Track section views with intersection observer
-      const sections = ['how-it-works', 'testimonials', 'join'];
+      const sections = ['how-it-works', 'features', 'join'];
       const observers: IntersectionObserver[] = [];
       
       sections.forEach(section => {
@@ -50,12 +52,15 @@ const Index: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <Hero />
-      <PageDivider type="blue-to-white" />
-      <HowItWorks />
+      <About />
       <PageDivider type="white-to-gray" />
-      <Testimonials />
+      <HowItWorks />
       <PageDivider type="gray-to-white" />
-      <ParticipantForms />
+      <Features />
+      <PageDivider type="white-to-gray" />
+      <ComingSoon />
+      <PageDivider type="gray-to-white" />
+      <WaitlistForm />
       <Footer />
     </div>
   );

@@ -1,32 +1,51 @@
 
 import React from 'react';
-import { Calendar, Clock, UserPlus, MessageCircle } from 'lucide-react';
+import { UserPlus, Users, MessageCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslations } from "../context/TranslationContext";
 
 const HowItWorks: React.FC = () => {
-  const { t } = useTranslations();
+  const { language } = useTranslations();
 
   const steps = [
     {
       icon: UserPlus,
-      titleKey: 'howItWorks.steps.signup.title',
-      descriptionKey: 'howItWorks.steps.signup.description'
+      titleKey: {
+        kk: "Тіркелу",
+        ru: "Регистрация",
+        en: "Sign Up"
+      },
+      descriptionKey: {
+        kk: "Қарапайым тіркелу формасын толтырыңыз",
+        ru: "Заполните простую форму регистрации",
+        en: "Fill out a simple registration form"
+      }
     },
     {
-      icon: Calendar,
-      titleKey: 'howItWorks.steps.matched.title',
-      descriptionKey: 'howItWorks.steps.matched.description'
+      icon: Users,
+      titleKey: {
+        kk: "Серіктеспен танысу",
+        ru: "Знакомство с собеседником",
+        en: "Match with Someone"
+      },
+      descriptionKey: {
+        kk: "Біз сізді қызықты адаммен байланыстырамыз",
+        ru: "Мы свяжем вас с интересным собеседником",
+        en: "We'll connect you with an interesting person"
+      }
     },
     {
       icon: MessageCircle,
-      titleKey: 'howItWorks.steps.connect.title',
-      descriptionKey: 'howItWorks.steps.connect.description'
-    },
-    {
-      icon: Clock,
-      titleKey: 'howItWorks.steps.meetings.title',
-      descriptionKey: 'howItWorks.steps.meetings.description'
+      titleKey: {
+        kk: "Сөйлесуді бастау",
+        ru: "Начать разговор",
+        en: "Start Talking"
+      },
+      descriptionKey: {
+        kk: "Жоспарланған қоңыраулар арқылы сөйлесіңіз",
+        ru: "Общайтесь через запланированные звонки",
+        en: "Chat via scheduled video calls"
+      }
     }
   ];
 
@@ -34,26 +53,50 @@ const HowItWorks: React.FC = () => {
     <div id="how-it-works" className="bg-white section-padding">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">{t('howItWorks.title')}</h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            {t('howItWorks.subtitle')}
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-foreground">
+            {language === 'kk' ? (
+              "Қалай жұмыс істейді"
+            ) : language === 'ru' ? (
+              "Как это работает"
+            ) : (
+              "How It Works"
+            )}
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            {language === 'kk' ? (
+              "3 қарапайым қадамда байланыс орнатыңыз"
+            ) : language === 'ru' ? (
+              "Установите связь всего за 3 простых шага"
+            ) : (
+              "Connect in just 3 simple steps"
+            )}
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, index) => (
-            <Card key={index} className="border border-gray-100 shadow-sm hover:shadow-md transition-all-smooth">
-              <CardHeader className="pb-2">
-                <div className="bg-blue-100 text-blue-600 w-12 h-12 flex items-center justify-center rounded-full mb-4">
-                  <step.icon size={24} />
-                </div>
-                <CardTitle className="text-lg md:text-xl font-semibold">{t(step.titleKey)}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">{t(step.descriptionKey)}</p>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {steps.map((step, index) => {
+            const Icon = step.icon;
+            return (
+              <Card key={index} className="border border-border shadow-lg hover:shadow-xl transition-all duration-300 bg-card relative">
+                <CardHeader className="pb-2 text-center">
+                  <div className="bg-primary/20 text-primary w-16 h-16 flex items-center justify-center rounded-full mb-4 mx-auto">
+                    <Icon size={32} />
+                  </div>
+                  <div className="absolute -top-4 -left-4 bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg">
+                    {index + 1}
+                  </div>
+                  <CardTitle className="text-xl md:text-2xl font-semibold text-card-foreground">
+                    {step.titleKey[language as keyof typeof step.titleKey]}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-center">
+                    {step.descriptionKey[language as keyof typeof step.descriptionKey]}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </div>
